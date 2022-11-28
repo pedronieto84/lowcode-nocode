@@ -1,0 +1,13 @@
+[
+    {
+    "nombre":"Pedro",
+    "edad": 38,
+    "fills": ["Carlos"]
+},
+{
+    "nombre":"Laura",
+    "edad": 38,
+    "fills": ["Ana", "Beth"]
+}
+]
+
