@@ -1,3 +1,2 @@
-console.log('hola mundo')
-console.log('Segundo commit')
-console.log('Tercer Commit')
+// String
+var nombre = 'Pedro'
