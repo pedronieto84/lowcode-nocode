@@ -44,6 +44,23 @@ app.post("/user", (req, res) => {
   res.send( { result: 'success'} );
 });
 
+
+// OPERACIO UPDATE ONE USER
+app.put("/user/:id", (req, res)=>{
+    // Primero tengo que coger la id del usuario que quiero updatear
+    const id = req.params.id
+
+    // Segundo tengo que coger el object json con la data que quiero modificar
+    const userToUpdate = req.body
+
+    // Tengo que encontrar el elemento del array y substituirlo por el nuevo objeto que me viene del body
+    users[id] = userToUpdate
+
+    res.send({result: 'success'})
+})
+
+
+
 // OPERACIO DELETE ONE USER
 app.delete("/user/:id", (req, res) => {
     const id = req.params.id
