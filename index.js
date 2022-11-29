@@ -4,12 +4,15 @@ const express = require('express')
 const app = express()
 const port = 3000
 
-let users = [{
-    nombre: 'Pedro'
-    },
+let users = [
+    {
+        nombre: 'Pedro'
+    }
+    ,
     {
         nombre: 'Laura'
-    },
+    }
+    ,
     {
         nombre: 'Lluis'
     }
