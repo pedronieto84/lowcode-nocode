@@ -2,6 +2,15 @@ console.log("hola mundo");
 console.log("Segundo commit");
 const express = require("express");
 
+// Inicializacion Firestore Database
+var passwords = require("./cert.json");
+const { storage } = require("firebase-admin");
+admin.initializeApp({
+  credential: admin.credential.cert(passwords),
+});
+
+const db = admin.firestore();
+
 const app = express();
 app.use(express.json());
 const port = 3000;

@@ -1,6 +1,8 @@
 {
   "dependencies": {
     "express": "^4.18.2",
+    "firebase-admin": "^10.2.0",
+    "firebase-tools": "^11.16.1",
     "nodemon": "^2.0.20"
   },
   "name": "lowcode-nocode",
@@ -8,7 +10,8 @@
   "main": "index.js",
   "scripts": {
     "setup": "npm install",
-    "start": "nodemon index"
+    "start": "nodemon index",
+    "firebase-setup": "npm install -g firebase-tools && firebase login"
   },
   "repository": {
     "type": "git",
@@ -20,5 +23,8 @@
     "url": "https://github.com/pedronieto84/lowcode-nocode/issues"
   },
   "homepage": "https://github.com/pedronieto84/lowcode-nocode#readme",
-  "description": ""
+  "description": "",
+  "volta": {
+    "node": "14.18.0"
+  }
 }
