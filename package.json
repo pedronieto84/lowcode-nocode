@@ -1,5 +1,24 @@
 {
   "dependencies": {
-    "express": "^4.18.2"
-  }
+    "express": "^4.18.2",
+    "nodemon": "^2.0.20"
+  },
+  "name": "lowcode-nocode",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "setup": "npm install",
+    "start": "nodemon index"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pedronieto84/lowcode-nocode.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/pedronieto84/lowcode-nocode/issues"
+  },
+  "homepage": "https://github.com/pedronieto84/lowcode-nocode#readme",
+  "description": ""
 }
