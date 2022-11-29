@@ -1,5 +1,6 @@
 
-
+// Donde pone pedro-4410f pon tu proyecto
+// Donde pone usuarios pon tu coleccion
 fetch('https://firestore.googleapis.com/v1/projects/pedro-4410f/databases/(default)/documents/usuarios')
   .then(response => response.json())
   .then(data => {
@@ -23,7 +24,7 @@ fetch('https://firestore.googleapis.com/v1/projects/pedro-4410f/databases/(defau
         const values = keys.map((eachKey)=>{
             return Object.values(userFields[eachKey])
         })
-        const user = {}
+        const user = {}  
         keys.forEach((key, index)=>{
             user[key] = values[index][0]
         })
