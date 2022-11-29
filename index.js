@@ -45,7 +45,7 @@ app.post("/user", (req, res) => {
 });
 
 
-// OPERACIO UPDATE ONE USER
+// OPERACIO UPDATE ONE USER AMB METODE PUT
 app.put("/user/:id", (req, res)=>{
     // Primero tengo que coger la id del usuario que quiero updatear
     const id = req.params.id
@@ -55,6 +55,29 @@ app.put("/user/:id", (req, res)=>{
 
     // Tengo que encontrar el elemento del array y substituirlo por el nuevo objeto que me viene del body
     users[id] = userToUpdate
+
+    res.send({result: 'success'})
+})
+
+
+// OPERACIO UPDATE ONE USER AMB METODE PATCH
+app.patch("/user/:id", (req, res)=>{
+
+    // Primero tengo que coger la id del usuario que quiero updatear
+    const id = req.params.id
+
+    // Segundo tengo que coger el object json con la data que quiero modificar
+    const userToUpdate = req.body
+    const keys = Object.keys(userToUpdate)[0]
+
+    // Primero cojo el objeto que habia antes
+    const objectePrevi = users[id]
+
+    objectePrevi[keys] = Object.values(userToUpdate)[0]
+    // Si hay alguna propiedad nueva
+    
+   
+    
 
     res.send({result: 'success'})
 })
