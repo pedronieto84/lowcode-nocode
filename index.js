@@ -44,6 +44,19 @@ app.post("/user", (req, res) => {
   res.send( { result: 'success'} );
 });
 
+// OPERACIO DELETE ONE USER
+app.delete("/user/:id", (req, res) => {
+    const id = req.params.id
+    users[id] = null
+    users = users.filter((user)=>{
+        return user
+    })
+    res.send({result: 'success'})
+});
+
+
+
+
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`);
 });
