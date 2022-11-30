@@ -16,11 +16,11 @@ const port = 3001;
 
 
 
-// OPERACIONS CRUD
+// OPERACIONS Create Read Update Delete
 
 // OPERACIO READ ALL USERS
 app.get("/users", async (req, res) => {
-  
+
   // COnexión con la base de datos para leer todos los usuarios
   const users = await db.collection('usuarios').get()
   const dataUsers = users.docs.map((d)=> d.data())
@@ -36,6 +36,7 @@ app.get("/user/:id", async (req, res) => {
   res.send(user.data());
 });
 
+
 // OPERACIO CREATE ONE USER
 app.post("/user", async (req, res) => {
   const user = req.body;
@@ -44,6 +45,7 @@ app.post("/user", async (req, res) => {
   await db.collection('usuarios').add(user)
   res.send({ result: "success" });
 });
+
 
 // OPERACIO UPDATE ONE USER AMB METODE PUT
 app.put("/user/:id", async (req, res) => {
@@ -72,6 +74,7 @@ app.patch("/user/:id", async (req, res) => {
 
   res.send({ result: "success" });
 });
+
 
 // OPERACIO DELETE ONE USER
 app.delete("/user/:id", async (req, res) => {
