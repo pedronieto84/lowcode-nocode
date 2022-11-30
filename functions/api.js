@@ -1,5 +1,5 @@
 const express = require("express");
-
+const cors = require("cors")
 // Inicializacion Firestore Database
 //var passwords = require("./cert.json");
 const admin = require("firebase-admin");
@@ -8,6 +8,7 @@ admin.initializeApp();
 const db = admin.firestore();
 
 const app = express();
+app.use(cors())
 app.use(express.json());
 const port = 3001;
 
