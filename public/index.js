@@ -3,8 +3,7 @@ fetch('https://us-central1-eliminarlo2.cloudfunctions.net/api/users')
   .then(response => response.json())
   .then(data => {
     console.log('data', data)
-    console.log('users', users)
-    return users
+    return data
   })
   .then((users)=>{
     console.log('users', users)
