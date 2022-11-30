@@ -1,4 +1,4 @@
-fetch("https://us-central1-eliminarlo2.cloudfunctions.net/api/users")
+fetch("")
   .then((response) => response.json())
   .then((data) => {
     console.log("data", data);
