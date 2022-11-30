@@ -1,5 +1,5 @@
 
-fetch('https://firestore.googleapis.com/v1/projects/eliminarlo2/databases/(default)/documents/usuarios')
+fetch('https://us-central1-eliminarlo2.cloudfunctions.net/api/users')
   .then(response => response.json())
   .then(data => {
     console.log('data', data)
