@@ -1,10 +1,9 @@
-console.log("hola mundo");
-console.log("Segundo commit");
+
 const express = require("express");
 
 // Inicializacion Firestore Database
 var passwords = require("./cert.json");
-const { storage } = require("firebase-admin");
+const admin = require("firebase-admin");
 admin.initializeApp({
   credential: admin.credential.cert(passwords),
 });
@@ -13,25 +12,17 @@ const db = admin.firestore();
 
 const app = express();
 app.use(express.json());
-const port = 3000;
+const port = 3001;
 
-let users = [
-  {
-    nombre: "Pedro",
-  },
-  {
-    nombre: "Laura",
-  },
-  {
-    nombre: "Lluis",
-  },
-];
+
 
 // OPERACIONS CRUD
 
 // OPERACIO READ ALL USERS
-app.get("/users", (req, res) => {
-  res.send(users);
+app.get("/users", async (req, res) => {
+  const users = await db.collection('usuarios').get()
+  const dataUsers = users.docs.map((d)=> d.data())
+  res.send(dataUsers);
 });
 
 // OPERACIO READ ONE USER
