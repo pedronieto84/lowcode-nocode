@@ -20,65 +20,66 @@ const port = 3001;
 
 // OPERACIO READ ALL USERS
 app.get("/users", async (req, res) => {
+  
+  // COnexión con la base de datos para leer todos los usuarios
   const users = await db.collection('usuarios').get()
   const dataUsers = users.docs.map((d)=> d.data())
   res.send(dataUsers);
 });
 
 // OPERACIO READ ONE USER
-app.get("/user/:id", (req, res) => {
+app.get("/user/:id", async (req, res) => {
   const id = req.params.id;
-  console.log("id", id);
-  res.send(users[id]);
+
+  //Conexión con la base de datos para leer la data de un usuario
+  const user = await db.collection('usuarios').doc(id).get()
+  res.send(user.data());
 });
 
 // OPERACIO CREATE ONE USER
-app.post("/user", (req, res) => {
+app.post("/user", async (req, res) => {
   const user = req.body;
-  console.log("user", user);
-  users.push(user);
+
+  // Conexión con la base de datos para enviarle un usuario nuevo
+  await db.collection('usuarios').add(user)
   res.send({ result: "success" });
 });
 
 // OPERACIO UPDATE ONE USER AMB METODE PUT
-app.put("/user/:id", (req, res) => {
+app.put("/user/:id", async (req, res) => {
   // Primero tengo que coger la id del usuario que quiero updatear
   const id = req.params.id;
 
   // Segundo tengo que coger el object json con la data que quiero modificar
   const userToUpdate = req.body;
 
-  // Tengo que encontrar el elemento del array y substituirlo por el nuevo objeto que me viene del body
-  users[id] = userToUpdate;
+  // Conexión con la base de datos para updatear ese campo con esa id
+  await db.collection('usuarios').doc(id).update(userToUpdate)
 
   res.send({ result: "success" });
 });
 
 // OPERACIO UPDATE ONE USER AMB METODE PATCH
-app.patch("/user/:id", (req, res) => {
+app.patch("/user/:id", async (req, res) => {
   // Primero tengo que coger la id del usuario que quiero updatear
   const id = req.params.id;
 
   // Segundo tengo que coger el object json con la data que quiero modificar
   const userToUpdate = req.body;
-  const keys = Object.keys(userToUpdate)[0];
 
-  // Primero cojo el objeto que habia antes
-  const objectePrevi = users[id];
-
-  objectePrevi[keys] = Object.values(userToUpdate)[0];
-  // Si hay alguna propiedad nueva
+  // Conexión con la base de datos para hacer un patch
+  await db.collection('usuarios').doc(id).set(userToUpdate, {merge:true})
 
   res.send({ result: "success" });
 });
 
 // OPERACIO DELETE ONE USER
-app.delete("/user/:id", (req, res) => {
+app.delete("/user/:id", async (req, res) => {
   const id = req.params.id;
-  users[id] = null;
-  users = users.filter((user) => {
-    return user;
-  });
+  
+  // Conexión con la base de datos para eliminar el documento que tiene esa id
+  await db.collection('usuarios').doc(id).delete()
+ 
   res.send({ result: "success" });
 });
 
