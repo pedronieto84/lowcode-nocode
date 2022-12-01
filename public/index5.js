@@ -1,4 +1,4 @@
-fetch("")
+fetch("https://us-central1-eliminarlo2.cloudfunctions.net/api/users")
   .then((response) => response.json())
   .then((data) => {
     console.log("data", data);
@@ -6,6 +6,7 @@ fetch("")
   })
   .then((users) => {
     console.log("users", users);
+    
     addTitle();
     addList(users);
   });
