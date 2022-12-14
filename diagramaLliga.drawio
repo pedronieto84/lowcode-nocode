@@ -131,9 +131,9 @@
                 <mxCell id="68" value="on" style="rhombus;whiteSpace=wrap;html=1;" vertex="1" parent="1">
                     <mxGeometry x="455" y="450" width="80" height="80" as="geometry"/>
                 </mxCell>
-                <mxCell id="70" value="" style="edgeStyle=none;html=1;startArrow=none;startFill=0;endArrow=none;endFill=0;" edge="1" parent="1" target="68">
+                <mxCell id="70" value="" style="edgeStyle=none;html=1;startArrow=none;startFill=0;endArrow=none;endFill=0;exitX=0;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="1" source="47" target="68">
                     <mxGeometry relative="1" as="geometry">
-                        <mxPoint x="665" y="490" as="sourcePoint"/>
+                        <mxPoint x="650" y="490" as="sourcePoint"/>
                         <mxPoint x="390" y="490" as="targetPoint"/>
                     </mxGeometry>
                 </mxCell>
