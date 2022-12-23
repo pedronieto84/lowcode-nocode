@@ -166,7 +166,7 @@ app.delete("/user/:id", async (req, res) => {
 
 // API propia que se conectará con openAI
 
-app.post("/open-ai", (req, res)=>{
+app.post("/openai", (req, res)=>{
   const data = req.body
 
   if(!data){
@@ -174,13 +174,7 @@ app.post("/open-ai", (req, res)=>{
   }
 
   // JSON que funciona correctamente (Para las pruebas)
-  // {
-  //   model: "text-davinci-003",
-  //   prompt: "Say this is a test",
-  //   temperature: 0,
-  //   max_tokens: 7
-  // }
-  
+
   // Cargo el objeto/ modulo / clase necesario para interactuar con openai
   const { Configuration, OpenAIApi } = require("openai");
   
@@ -213,15 +207,6 @@ app.post("/open-ai", (req, res)=>{
     });
 
 })
-
-
-
-
-
-
-
-
-
 
 
 if (local) {
