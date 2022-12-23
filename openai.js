@@ -18,7 +18,10 @@
 
   // Hago la petición a su api y meto la respuesta en la variable response
   openai
-    .createCompletion(data)
+    .createCompletion({
+        model: "text-davinci-002",
+        prompt: "Hello world",
+      })
     // Si la respuesta es exitosa entonces (then...)
     .then((response) => {
       console.log("response", response.data.choices[0].text);
