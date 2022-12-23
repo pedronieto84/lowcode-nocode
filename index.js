@@ -2,8 +2,13 @@
 const { Configuration, OpenAIApi } = require("openai");
 
 // Le paso las claves de openAi
+
+// Organization id = "org-nlIbZe2ZubKiERC0nsAoXZwA"
+// Api Key = "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"
+
+const apiKey = "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"
 const configuration = new Configuration({
-  apiKey: process.env.OPENAI_API_KEY,
+  apiKey: apiKey,
 });
 
 // Creo una nueva instancia de OPENAI
@@ -15,14 +20,15 @@ openai
     model: "text-davinci-003",
     prompt: "Say this is a test",
     temperature: 0,
-    max_tokens: 7,
+    max_tokens: 7
   })
   // Si la respuesta es exitosa entonces (then...)
   .then((response) => {
-    console.log("response", response);
+    console.log("response", response.data.choices[0].text);
   })
   // Si hay un error logueo el error
   .catch((e) => {
-    console.error(e);
+    console.error('Esto ha sido un error', e);
   });
+
 
