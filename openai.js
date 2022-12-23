@@ -25,10 +25,10 @@
     // Si la respuesta es exitosa entonces (then...)
     .then((res) => {
       console.log("response", response.data.choices[0].text);
-      res.status(200).send(response.data);
+     
     })
     // Si hay un error logueo el error
     .catch((e) => {
-      res.status(500).send(e);
+ 
       console.error("Esto ha sido un error", e);
     });
