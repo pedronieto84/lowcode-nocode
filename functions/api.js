@@ -8,8 +8,8 @@ const cors = require("cors");
 const admin = require("firebase-admin");
 
 // Cargo el archivo json que me informa de si la versión es la de produccion (fireebase functions) o es en local (localhost)
-let local = require("./version.json")
-local = local.local
+let local = require("./version.json");
+local = local.local;
 // Inicializacion Firestore Database
 //var passwords = require("./cert.json");
 // const admin = require("firebase-admin");
@@ -43,8 +43,7 @@ const port = 3002;
 
 // Este metodo se encarga de decidir si un usuario puede acceder o no
 const authentication = async (token) => {
-
-  return true
+  return true;
   // Me tengo que conectar con firebase y preguntarle si el token que me han pasado es correcto o no es correcto.
   console.log("Metodo autenticacion", token);
   try {
@@ -60,7 +59,7 @@ const authentication = async (token) => {
       return true;
     }
 
-    return true
+    return true;
   } catch (e) {
     // Si hemos llegado a este bloque es porque el metodo verifyIdToken dio error
     // Es decir el usuario o el token o lo que sea no era correcto
@@ -72,10 +71,6 @@ const authentication = async (token) => {
 
 // Middleware que s'encarrega de comprobar avans que entrin en joc els endpoints si l'usuari pot accedir o no
 app.use(async (req, res, next) => {
-  if (!req.headers.authorization) {
-    return res.status(403).json({ error: "No has añadido token!" });
-  }
-
   // SI llego aqui es porque si me han añadido un token.
   const token = req.headers.authorization;
 
@@ -166,48 +161,47 @@ app.delete("/user/:id", async (req, res) => {
 
 // API propia que se conectará con openAI
 
-app.post("/openai", (req, res)=>{
-  const data = req.body
-
-  if(!data){
-    return res.status(400).send({message: "Falta el objeto JSON para comunicarte con OPEN API"})
+app.post("/openai", (req, res) => {
+  const data = req.body;
+  console.log("post");
+  if (!data) {
+    return res
+      .status(400)
+      .send({ message: "Falta el objeto JSON para comunicarte con OPEN API" });
   }
 
   // JSON que funciona correctamente (Para las pruebas)
 
   // Cargo el objeto/ modulo / clase necesario para interactuar con openai
   const { Configuration, OpenAIApi } = require("openai");
-  
+
   // Le paso las claves de openAi
-  
+
   // Organization id = "org-nlIbZe2ZubKiERC0nsAoXZwA"
   // Api Key = "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"
-  
-  const apiKey = "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"
+
+  const apiKey = "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";
   const configuration = new Configuration({
     apiKey: apiKey,
   });
-  
+
   // Creo una nueva instancia de OPENAI
   const openai = new OpenAIApi(configuration);
-  
+
   // Hago la petición a su api y meto la respuesta en la variable response
   openai
     .createCompletion(data)
     // Si la respuesta es exitosa entonces (then...)
     .then((response) => {
       console.log("response", response.data.choices[0].text);
-      res.status(200).send(response.data)
-
+      res.status(200).send(response.data);
     })
     // Si hay un error logueo el error
     .catch((e) => {
-      res.status(500).send(e)
-      console.error('Esto ha sido un error', e);
+      res.status(500).send(e);
+      console.error("Esto ha sido un error", e);
     });
-
-})
-
+});
 
 if (local) {
   // Si trabajamos en local necesito inicializar el servidor
