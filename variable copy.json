@@ -1,0 +1,27 @@
+[
+    {
+        "nombre": "Lluis",
+        "edad": 48,
+        "posicio": "Administriu",
+        "idiomaqueparlas": ["Catala", "Castella"],
+        "sou": 24000,
+        "fills": [{
+            "nom":"Laura", "edad": 10
+        }, {
+            "nom": "Josep", "edad": 8
+        }]
+    },
+    {
+        "nombre": "Lidia",
+        "edad": 57,
+        "posicio": "Directora Executiva",
+        "idiomaqueparlas": ["Catala", "Castella", "Angles"],
+        "sou": 38000
+    },   {
+        "nombre": "Lourdes",
+        "edad": 56,
+        "posicio": "Comercial",
+        "idiomaqueparlas": ["Castella", "Angles", "Alemany"],
+        "sou": 34000
+    }
+]
