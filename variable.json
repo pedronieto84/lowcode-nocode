@@ -1,0 +1,31 @@
+[
+    {
+        "nom": "Juan",
+        "edat": 34,
+        "sexe": "home",
+        "aficions": ["esqui", "tenis", "cinema"],
+        "casat": false,
+        "fills": [{
+            "nom":"Laura", "edad": 10
+        }, {
+            "nom": "Josep", "edad": 8
+        }]
+    },
+    {
+        "nom": "Sheila",
+        "edat": 21,
+        "sexe": "dona",
+        "aficions": ["montanyisme", "moda"],
+        "casat": false,
+        "fills": []
+    },   {
+        "nom": "Laura",
+        "edat": 43,
+        "sexe": "dona",
+        "aficions": ["cinema"],
+        "casat": true,
+        "fills": [{
+            "nom":"Carlos", "edad": 6
+        }]
+    }
+]
