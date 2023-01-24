@@ -4,12 +4,7 @@
         "edad": 48,
         "posicio": "Administriu",
         "idiomaqueparlas": ["Catala", "Castella"],
-        "sou": 24000,
-        "fills": [{
-            "nom":"Laura", "edad": 10
-        }, {
-            "nom": "Josep", "edad": 8
-        }]
+        "sou": 24000
     },
     {
         "nombre": "Lidia",

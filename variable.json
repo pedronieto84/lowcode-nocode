@@ -4,12 +4,7 @@
         "edat": 34,
         "sexe": "home",
         "aficions": ["esqui", "tenis", "cinema"],
-        "casat": false,
-        "fills": [{
-            "nom":"Laura", "edad": 10
-        }, {
-            "nom": "Josep", "edad": 8
-        }]
+        "casat": false
     },
     {
         "nom": "Sheila",
