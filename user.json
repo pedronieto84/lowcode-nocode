@@ -1,13 +1,32 @@
 [
-    {
-    "nombre":"Pedro",
+  {
+    "nombre": "Pedro",
     "edad": 38,
     "fills": ["Carlos"]
-},
-{
-    "nombre":"Laura",
+  },
+  {
+    "nombre": "Laura",
     "edad": 38,
     "fills": ["Ana", "Beth"]
-}
+  },
+  {
+    "nombre": "Joanna",
+    "edad": 35,
+    "fills": []
+  },
+  {
+    "nombre": "Jesus",
+    "edad": 56,
+    "fills": ["Lluis", "Josep"]
+  },
+  {
+    "nombre": "Josep",
+    "edad": 38,
+    "fills": ["Jenni"]
+  },
+  {
+    "nombre": "Joan",
+    "edad": 19,
+    "fills": ["Ana", "lluisa"]
+  }
 ]
-
