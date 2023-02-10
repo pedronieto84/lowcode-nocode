@@ -1,13 +1,13 @@
 // Ejemplo de objeto JSON de tipo usuario esta en el archivo user.json
 
-var users = require('./user.json')
 
-// Metodo Array.from devuelve un array a partir de un iterable (string, number...)
-const nombre = "Pedro"
+const numbers = [1,1,2,2]
 
-const arrayNombre = Array.from(nombre)
+// Metodo Includes. Evalua si está incluido ese elemento
 
-console.log('Array a partir de un string', arrayNombre)
+const includes = numbers.includes(5)
+
+console.log('Incluye ese valor?', includes)
 
 
 
