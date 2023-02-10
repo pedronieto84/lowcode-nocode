@@ -1,14 +1,41 @@
-// Ejemplo de objeto JSON de tipo usuario esta en el archivo user.json
 
 
-const numbers = [1,1,2,2]
+const valorSucio = "34,23€"
 
-// Metodo Includes. Evalua si está incluido ese elemento
+const arrayOfStrings = Array.from(valorSucio)
 
-const includes = numbers.includes(5)
+// Quitar el ultimo caracter.
 
-console.log('Incluye ese valor?', includes)
+const stringSinEuro = valorSucio.slice(0, valorSucio.length - 1)
+console.log('string sin euro', stringSinEuro)
 
+// Convertirlo a Array
+
+const arrayNum = Array.from(stringSinEuro)
+
+// Utilizar algun metodo de array para cambiar la ',' por un '.'
+
+// ENcontrar posicion de la coma
+
+const posicionComa = arrayNum.findIndex((item)=> item === ',')
+
+// Substituir directamente en el array ese elemento
+arrayNum[posicionComa] = '.'
+
+
+
+// Convertir el array a String
+
+
+
+const join = arrayNum.join('')
+
+
+
+// Convertir el string a Float
+
+const valorLimpio = parseFloat(join)
+console.log('fin string', valorLimpio)
 
 
 
