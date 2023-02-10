@@ -5,12 +5,13 @@ var users = require('./user.json')
 
 
 
-// IndexOf, me devuelve el indice de un elemento que cumpla la condicion del callback
-// Previamente uso el map para filtrar aquel campo sobre el que quiero operar
+// Metodo Find me devuelve el elemento entero. 
 
-const posicionJoana = users.map((user)=> user.nombre).indexOf("Joanna")
+const joanna = users.find((user)=>{
+    return user.nombre === "Joanna"
+})
 
-console.log('posicion joanna en el array', posicionJoana)
+console.log('objecte JOanna', joanna)
 
 
 
