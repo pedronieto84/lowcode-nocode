@@ -4,14 +4,14 @@ var users = require('./user.json')
 
 
 
-// 
-// Metodo every aplica un test a cada uno de los elementos y me devuelve un booleano en función de si todos lo han pasado o no
 
-const todosCumlenEsteRequisito = users.every((user)=>{
-    return user.edad > 18
+// Metodo some pregunta si algun elmento (como minimo uno) cumple lo que se le pregunta en el callback.
+
+const hayAlgunMenor = users.some((user)=>{
+    return user.edad < 18
 })
 
-console.log('todos son mayores de Edad?', todosCumlenEsteRequisito)
+console.log('todos son mayores de Edad?', hayAlgunMenor)
 
 
 
