@@ -1,7 +1,7 @@
 [
   {
     "nombre": "Pedro",
-    "edad": 38,
+    "edad": 31,
     "fills": ["Carlos"]
   },
   {
@@ -21,7 +21,7 @@
   },
   {
     "nombre": "Josep",
-    "edad": 38,
+    "edad": 43,
     "fills": ["Jenni"]
   },
   {
