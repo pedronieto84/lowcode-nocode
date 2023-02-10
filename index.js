@@ -2,12 +2,15 @@
 
 var users = require('./user.json')
 
-var arraySimplificat = ["Banana", "Orange", "Apple", "Mango"]
+var arrayNumbers = [1,  3, 23, 5, 0, -1, 2]
 
-// Metodo slice, corta y añade elementos dentro de otro array
+// Metodo sort
 
-const arrayCortado = arraySimplificat.slice(1,3)
-console.log('array cortado', arrayCortado)
+arrayNumbers.sort()
+
+console.log('arrayNumbers', arrayNumbers)
+
+
 
 
 
