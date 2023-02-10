@@ -4,17 +4,14 @@ var users = require('./user.json')
 
 
 
-// Metodo sort para que considere correctamente los números y no se quede solamente con el metodo por defecto que los interpreta como si fueran strings.
-
-users.sort((previo, posterior)=> {
-let x = previo.nombre.toLowerCase();
-let y = posterior.nombre.toLowerCase();
-if (x < y) {return -1;}
-if (x > y) {return 1;}
-return 0;
+// Metodo ForEach itera por cada elemento y dentro de la callback function pues determino que hacer
+let edadTotal = 0
+users.forEach((user)=>{
+    console.log('user', user)
+    edadTotal = edadTotal + user.edad
 })
 
-console.log('ordenados por edad', users)
+console.log('edad total', edadTotal)
 
 
 
