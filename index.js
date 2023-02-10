@@ -4,12 +4,10 @@ var users = require('./user.json')
 
 var arraySimplificat = ["Banana", "Orange", "Apple", "Mango"]
 
-var segundoArray = ["Apple", "Melon"]
+// Metodo slice, corta y añade elementos dentro de otro array
 
-var tercerArray = ["Pears"]
+const arrayCortado = arraySimplificat.slice(1,3)
+console.log('array cortado', arrayCortado)
 
-// Concatenar o juntar dos arrays
 
 
-const arrayTotalFrutas = arraySimplificat.concat(segundoArray, tercerArray);
-console.log('arrayFInal', arrayTotalFrutas)
