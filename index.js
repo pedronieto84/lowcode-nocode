@@ -4,9 +4,9 @@ var users = require('./user.json')
 
 var arraySimplificat = [ 1, 3, 4, 6, 7, 12]
 
-// Metodo PUSH añade un elemento al final del array
+// Metodo SHIFT quita el primer elemento del array
 
-const añadoElemento = arraySimplificat.push(23)
+const elementoQuitado = arraySimplificat.shift()
 
-console.log('Primer Array', arraySimplificat)
-console.log('Segon Array', añadoElemento)
+console.log('Array Final', arraySimplificat)
+console.log('Elemento Quitado', elementoQuitado)
