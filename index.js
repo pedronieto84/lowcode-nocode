@@ -2,11 +2,10 @@
 
 var users = require('./user.json')
 
-var arraySimplificat = [ 1, 3, 4, 6, 7, 12]
+var arraySimplificat = ["Banana", "Orange", "Apple", "Mango"]
 
-// Metodo UNSHIFT quita el primer elemento del array
+// Cambiar un elemento de una posicion en particular
 
-const unshift = arraySimplificat.unshift(0)
+arraySimplificat[1] = "Lemon"
 
 console.log('Array Final', arraySimplificat)
-console.log('Elemento Quitado', unshift)
