@@ -4,9 +4,9 @@ var users = require('./user.json')
 
 var arraySimplificat = [ 1, 3, 4, 6, 7, 12]
 
-// Metodo POP (quita el ultimo elemento del array y me lo devuelve)
+// Metodo PUSH añade un elemento al final del array
 
-const ultimoElemento = arraySimplificat.pop()
+const añadoElemento = arraySimplificat.push(23)
 
-console.log('ultimo ELemento', ultimoElemento)
-console.log('el array me quedaría así', arraySimplificat)
+console.log('Primer Array', arraySimplificat)
+console.log('Segon Array', añadoElemento)
