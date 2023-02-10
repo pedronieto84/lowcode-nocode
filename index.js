@@ -2,16 +2,12 @@
 
 var users = require('./user.json')
 
+// Metodo Array.from devuelve un array a partir de un iterable (string, number...)
+const nombre = "Pedro"
 
+const arrayNombre = Array.from(nombre)
 
-
-// Metodo Find me devuelve el elemento entero. 
-
-const joanna = users.find((user)=>{
-    return user.nombre === "Joanna"
-})
-
-console.log('objecte JOanna', joanna)
+console.log('Array a partir de un string', arrayNombre)
 
 
 
