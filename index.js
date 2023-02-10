@@ -5,13 +5,12 @@ var users = require('./user.json')
 
 
 
-// Metodo some pregunta si algun elmento (como minimo uno) cumple lo que se le pregunta en el callback.
+// IndexOf, me devuelve el indice de un elemento que cumpla la condicion del callback
+// Previamente uso el map para filtrar aquel campo sobre el que quiero operar
 
-const hayAlgunMenor = users.some((user)=>{
-    return user.edad < 18
-})
+const posicionJoana = users.map((user)=> user.nombre).indexOf("Joanna")
 
-console.log('todos son mayores de Edad?', hayAlgunMenor)
+console.log('posicion joanna en el array', posicionJoana)
 
 
 
