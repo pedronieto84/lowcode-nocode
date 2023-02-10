@@ -4,8 +4,6 @@ var users = require('./user.json')
 
 var arraySimplificat = ["Banana", "Orange", "Apple", "Mango"]
 
-// Cambiar un elemento de una posicion en particular
+// Contar cuantos elementos hay en el array
 
-arraySimplificat[1] = "Lemon"
-
-console.log('Array Final', arraySimplificat)
+console.log('longitud',arraySimplificat.length)
