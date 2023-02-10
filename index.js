@@ -4,14 +4,14 @@ var users = require('./user.json')
 
 
 
-// Metodo filter. Filtra elements del array
+// Metodo reduce. Aplica el callback en cada elemento hacia el siguiente
 
-const usersMayoresDeEdad = users.filter((user)=>{
+const edadTotal = users.reduce((total, valorDeEstaIteracion)=>{
     // Evaluará esta expresión a booleano. Si es true, pasará el filtro, si es false no lo pasara.
-    return user.edad === 38
-})
+    return total + valorDeEstaIteracion.edad
+}, 0)
 
-console.log('usersMayoresDeEdad', usersMayoresDeEdad)
+console.log('sumatorio de todas las edades', edadTotal)
 
 
 
