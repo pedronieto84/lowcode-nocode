@@ -2,17 +2,9 @@
 
 var users = require('./user.json')
 
+var arraySimplificat = [ 1, 3, 4, 6, 7, 12]
 
-// Saber la edad de pedro.
+// Metodo toString() devuelve un string a partir de una array
 
-var edadPedro = users[0].edad 
-console.log('edad de pedro es', edadPedro)
-
-
-// Saber el nombre del segundo usuario.
-var nombreSegundoUsuario = users[1].edad
-console.log('nombre segundo usuario', nombreSegundoUsuario)
-
-// Saber el nom de el segon/a fill/a de Laura
-var nombreSegundoFillLaura = users[1].fills[1]
-console.log('Nombre segona filla de Laura', nombreSegundoFillLaura)
+const stringResult = arraySimplificat.toString()
+console.log('toString', stringResult)
