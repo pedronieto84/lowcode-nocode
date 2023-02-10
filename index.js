@@ -4,14 +4,14 @@ var users = require('./user.json')
 
 
 
-// Metodo reduce. Aplica el callback en cada elemento hacia el siguiente
+// 
+// Metodo every aplica un test a cada uno de los elementos y me devuelve un booleano en función de si todos lo han pasado o no
 
-const edadTotal = users.reduce((total, valorDeEstaIteracion)=>{
-    // Evaluará esta expresión a booleano. Si es true, pasará el filtro, si es false no lo pasara.
-    return total + valorDeEstaIteracion.edad
-}, 0)
+const todosCumlenEsteRequisito = users.every((user)=>{
+    return user.edad > 18
+})
 
-console.log('sumatorio de todas las edades', edadTotal)
+console.log('todos son mayores de Edad?', todosCumlenEsteRequisito)
 
 
 
