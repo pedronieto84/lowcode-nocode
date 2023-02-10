@@ -4,9 +4,9 @@ var users = require('./user.json')
 
 var arraySimplificat = [ 1, 3, 4, 6, 7, 12]
 
-// Metodo SHIFT quita el primer elemento del array
+// Metodo UNSHIFT quita el primer elemento del array
 
-const elementoQuitado = arraySimplificat.shift()
+const unshift = arraySimplificat.unshift(0)
 
 console.log('Array Final', arraySimplificat)
-console.log('Elemento Quitado', elementoQuitado)
+console.log('Elemento Quitado', unshift)
