@@ -4,14 +4,14 @@ var users = require('./user.json')
 
 
 
-// Metodo map modifica los elementos del array
+// Metodo filter. Filtra elements del array
 
-users.map((user)=>{
-    user.mayorEdad = user.edad > 18 ? true : false
-    delete user.fills
+const usersMayoresDeEdad = users.filter((user)=>{
+    // Evaluará esta expresión a booleano. Si es true, pasará el filtro, si es false no lo pasara.
+    return user.edad === 38
 })
 
-console.log('edad total', users)
+console.log('usersMayoresDeEdad', usersMayoresDeEdad)
 
 
 
