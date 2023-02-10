@@ -4,6 +4,12 @@ var users = require('./user.json')
 
 var arraySimplificat = ["Banana", "Orange", "Apple", "Mango"]
 
-// Contar cuantos elementos hay en el array
+var segundoArray = ["Apple", "Melon"]
 
-console.log('longitud',arraySimplificat.length)
+var tercerArray = ["Pears"]
+
+// Concatenar o juntar dos arrays
+
+
+const arrayTotalFrutas = arraySimplificat.concat(segundoArray, tercerArray);
+console.log('arrayFInal', arrayTotalFrutas)
